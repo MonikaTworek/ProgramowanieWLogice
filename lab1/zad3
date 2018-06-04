@@ -1,0 +1,33 @@
+left_of(pencil, glasshour).
+left_of(glasshour, butterfly).
+left_of(butterfly, fish).
+above(bike, pencil).
+above(photo, butterfly).
+
+left(Object1, Object2) :-
+	left_of(Object1, Object2);
+	left_of(Object1, Object3), left(Object3, Object2).
+
+abovee(Object1, Object2) :-
+	above(Object1, Object2);
+	above(Object1, Object3), abovee(Object3, Object2).
+
+right_of(Object1, Object2) :- 
+	left_of(Object2, Object1); 
+	left_of(Object2, Object3), right_of(Object1, Object3).
+
+below(Object1, Object2) :- 
+	above(Object2, Object1); 
+	above(Object2, Object3), below(Object1, Object3).
+
+higher(Object1, Object2) :- 
+	(
+		above(Object1, Object3), \+above(Object2, Object4)
+	);
+	(
+		above(Object1, Object3),
+		above(Object2, Object4),
+		higher(Object3, Object4)
+	).
+
+

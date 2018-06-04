@@ -1,0 +1,13 @@
+le(3,3).
+le(3,5).
+le(5,7).
+le(3,7).
+le(5,5).
+le(7,7).
+
+przechodnia :- \+(\+le(X, Y); \+le(Y,Z)), \+le(X,Z).
+zwrotna :- le(X,X).
+slaboanty :- \+(le(X,Y); \+le(Y,X)), \+X=Y.
+czesciowy_porzadek :- slaboanty, zwrotna, przechodnia. 
+
+czesciowy_porzadek.

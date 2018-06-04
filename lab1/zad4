@@ -1,0 +1,15 @@
+le(3,4).
+le(4,5).
+le(3,6).
+le(6,6).
+le(3,3).
+le(5,5).
+le(4,4).
+
+
+w_zbiorze(X) :- le(X,_).
+maksymalny(X) :- \+(w_zbiorze(Y), le(X,Y), diff(X,Y)).
+najwiekszy(X) :- \+ (w_zbiorze(Y), X \= Y, le(X,Y)).
+minimalny(X) :- \+(w_zbiorze(Y), le(Y, X), diff(X,Y)).
+najmniejszy(X) :- \+ (w_zbiorze(Y), X \= Y, le(Y,X)).
+

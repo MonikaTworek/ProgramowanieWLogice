@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html 
+	lang="pl"
+	xmlns:pwp="http://www.cs.otago.ac.nz/staffpriv/ok/pwp.pl"
+>
+<head>
+	<meta charset="utf-8" />
+	<title>Queens</title>
+	<meta name="generator" content="BBEdit 11.5" />
+</head>
+<body
+	pwp:ask="ensure_loaded(queens),size(N),once(queens(N,Permutation))">
+	
+<h1>Queens problem</h1>
+
+<h2>
+	Solution for N = <span pwp:use="N"></span>
+</h2>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr pwp:ask="member(X,Permutation)">
+			<td pwp:ask="between(1,N,Y)">
+				<img pwp:ask="X=\=Y" src="pic/empty.png"/>
+				<img pwp:ask="X=:=Y" src="pic/queen.png"/>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

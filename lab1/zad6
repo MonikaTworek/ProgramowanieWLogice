@@ -1,0 +1,5 @@
+is_prime(X) :- \+ (Y is integer(sqrt(X)), between(2, Y, N), X mod N=:=0).
+	
+
+prime(LO, HI, N) :- between(LO, HI, N), is_prime(N).
+
